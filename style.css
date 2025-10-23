@@ -4,7 +4,7 @@ ul{
   list-style: none;
 }
 
-.h1 .h1-move:active {
+.h1:hover {
         transform: translateX(30px);
         transition: transform 300ms ease-in-out;
 }
