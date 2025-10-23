@@ -8,3 +8,9 @@ ul{
         transform: translateX(30px);
         transition: transform 300ms ease-in-out;
 }
+body {
+  background-image: url('../images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
