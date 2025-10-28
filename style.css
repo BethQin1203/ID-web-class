@@ -1,16 +1,156 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Ranchers&display=swap');
 
-ul{
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom, #e8f3cc, #f9e0e0);
+  overflow-x: hidden;
+}
+.page {
+  display: none;
+  text-align: center;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.page.active {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+nav ul {
+  display: flex;
+  gap: 2rem;
   list-style: none;
 }
-
-.h1:hover {
-        transform: translateX(30px);
-        transition: transform 300ms ease-in-out;
+nav ul li {
+  cursor: pointer;
+  font-weight: 600;
 }
-body {
-  background-image: url('../images/background.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+
+/* Page 1 Hero */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  text-align: center;
+}
+.big-text {
+  font-size: 6rem;
+  color: #f36b6b;
+  font-weight: 800;
+  transition: all 0.8s ease;
+}
+.can-container img {
+  width: 250px;
+  transition: all 0.8s ease;
+  filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.2));
+}
+.text p {
+  width: 300px;
+}
+.text button {
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #5a662b;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hidden { display: none; }
+.popup-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  width: 400px;
+  animation: fadeIn 0.5s ease;
+}
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.8);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+/* Page 3 */
+#centerText {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #f36b6b;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 2s ease;
+}
+#centerText.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Page 4 Letter Movement */
+#moveLetters {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #f36b6b;
+  letter-spacing: 0.8rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1.5s ease;
+}
+#moveLetters.active {
+  opacity: 1;
+  transform: translateY(0);
+  letter-spacing: 0.2rem;
+}
+
+/* Page 5 Hover Animation */
+.final-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hover-text {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #f36b6b;
+  transition: transform 0.5s ease;
+}
+.hover-can img {
+  width: 250px;
+  transition: all 0.5s ease;
+  filter: drop-shadow(0 10px 10px rgba(0,0,0,0.3));
+}
+.hover-text:hover, .hover-can:hover img {
+  transform: translateY(-20px);
+}
+.hover-can:hover img {
+  filter: drop-shadow(0 25px 15px rgba(0,0,0,0.2));
 }

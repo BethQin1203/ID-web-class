@@ -1,67 +1,73 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/font-awesome.css" />
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <title>HTML + WIP of 1 Element (JS or CSS animation)</title>
-  </head>
-  <body>
-    <header>
-      <!-- Navigation -->
-      <nav class="navbar navbar-expand-sm fixed-top sticky-top d-flex">
-        <div class="container">
-            <a href="index.html" style="margin-left: 0px;"
-              ><img src="images/logo.png" class="logo"
-            /></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav align-items-center">
-              <li class="nav-item">
-                <a class="nav-link text-black" href="#">Products</a>
-              </li>
-              <li class="nav-item1">
-                <a class="nav-link text-black" href="#">About</a>
-              </li>
-              <li class="nav-item-btn">
-                <a class="btn btn-outline-light ms-3" href="#">Insights</a>
-              </li>
-            </li>
-            <li class="nav-item-search">
-              <a href="index.html" style="margin-left: 0px;"
-              ><img src="images/search.png" class="search"
-            /></a>
-            </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- Header -->
-      <header class="header">
-        <!-- Hero -->
-        <section class="header d-flex">
-        <header class="hero-section d-flex align-items">
-          <div class="container text-right text-black">
-            <h1 class="fw-light">STRAW</h1>
-            <h1 class="display-3 fw-bold ">BERRY</h1>
-            <p class="lead">Sip into sweetness with our refreshing strawberry drink bursting with juicy flavor for a taste of pure delight.</p>
-            <a href="#" class="btn btn-outline-light mt-3">ORDER NOW</a>
-            <li class="container picture-left">
-              <a href="index.html" style="margin-left: 0px;"
-              ><img src="images/Drink.png" class="drink"
-            /></a>
-            </li>
-            <li class="container picture-left">
-              <a href="index.html" style="margin-left: 0px;"
-              ><img src="images/bubble.png" class="bubble"
-            /></a>
-            </li>
-          </div>
-        </header>
-      </section>
-    <main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strawberry-drink Animation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- PAGE 1 -->
+  <section id="page1" class="page active">
+    <nav>
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo" />
+      </div>
+      <ul>
+        <li>Products</li>
+        <li>About</li>
+        <li>Insights</li>
+      </ul>
+      <div class="logo">
+        <img src="images/search.png" alt="search" />
+      </div>
+    </nav>
+    <div class="hero">
+      <h1 class="big-text">STRAW<br> BERRY</h1>
+      <div class="drink-container">
+        <img id="drink" src="images/Drink.png" alt="drink" />
+      </div>
+      <div class="text">
+        <p>Sip into sweetness with our refreshing strawberry drink bursting with juicy flavor for a taste of pure delight.</p>
+        <button id="orderBtn">ORDER NOW</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 2: POPUP -->
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <span id="closePopup" class="close">&times;</span>
+      <img src="images/pop out box.png" alt="pop ad" />
+      <h2>Get 15% Off</h2>
+      <p>Enjoy 15% off your first order when you sign up, plus special offers and updates on new flavors.</p>
+      <input type="email" placeholder="Email" />
+      <button>Sign Up</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <section id="page3" class="page hidden">
+    <h1 id="centerText">STRAWBERRY VANILLA</h1>
+  </section>
+
+  <!-- PAGE 4: SMOOTH LETTER MOVE -->
+  <section id="page4" class="page hidden">
+    <h1 id="moveLetters">S T R A W B E R R Y</h1>
+  </section>
+
+  <!-- PAGE 5: HOVER ANIMATION -->
+  <section id="page5" class="page hidden">
+    <div class="final-hero">
+      <h1 class="hover-text">STRAWBERRY VANILLA</h1>
+      <div class="hover-can">
+        <img src="https://i.ibb.co/Z8JHqvQ/strawberry-soda.png" alt="drink" />
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
