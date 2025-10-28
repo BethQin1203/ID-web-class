@@ -1,15 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Ranchers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Ranchers&display=swap');
 
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(to bottom, #e8f3cc, #f9e0e0);
+  background: url("images/background.png") no-repeat center center fixed;
+  background-size: cover;    
   overflow-x: hidden;
 }
+
 .page {
   display: none;
   text-align: center;
-  height: 100vh;
+  width: 100vw;        
+  height: 100vh;     
   justify-content: center;
   align-items: center;
 }
@@ -49,7 +52,7 @@ nav ul li {
   font-weight: 800;
   transition: all 0.8s ease;
 }
-.can-container img {
+.drink-container img {
   width: 250px;
   transition: all 0.8s ease;
   filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.2));
@@ -72,23 +75,28 @@ nav ul li {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0,0,0,0.4);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .hidden { display: none; }
+
 .popup-content {
   background: white;
   padding: 2rem;
   border-radius: 20px;
   text-align: center;
   position: relative;
-  width: 400px;
+  width: 80vw;
+  max-width: 947px;   /* matches your Figma width but scales */
+  max-height: 90vh;
+  overflow: auto;
   animation: fadeIn 0.5s ease;
 }
+
 .close {
   position: absolute;
   right: 15px;
@@ -96,6 +104,7 @@ nav ul li {
   font-size: 1.5rem;
   cursor: pointer;
 }
+
 @keyframes fadeIn {
   from {opacity: 0; transform: scale(0.8);}
   to {opacity: 1; transform: scale(1);}
@@ -117,6 +126,15 @@ nav ul li {
 
 /* Page 4 Letter Movement */
 #moveLetters {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #f36b6b;
+  letter-spacing: 0.8rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1.5s ease;
+}
+#moveLetters1 {
   font-size: 4rem;
   font-weight: 800;
   color: #f36b6b;
@@ -153,4 +171,53 @@ nav ul li {
 }
 .hover-can:hover img {
   filter: drop-shadow(0 25px 15px rgba(0,0,0,0.2));
+}
+
+/* BERRY appears from right */
+.berry {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(200px);
+  animation: slideInRight 1.5s ease forwards;
+  animation-delay: 0.3s; /* appears slightly later */
+}
+
+@keyframes slideInLeft {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Drink image */
+.drink-container img {
+  width: 250px;
+  transition: all 0.8s ease;
+  filter: drop-shadow(0 10px 8px rgba(0,0,0,0.2));
+}
+
+.text {
+  max-width: 300px;
+}
+.text p {
+  font-size: 1.1rem;
+}
+.text button {
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #5a662b;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.text button:hover {
+  background-color: #7d8f4f;
 }
