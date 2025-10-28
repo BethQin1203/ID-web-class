@@ -24,12 +24,18 @@ body {
 
 /* Navbar */
 nav {
+  width: 1512px;
+  height:139px ;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
 }
 nav ul {
+  padding-left: 0%;
   display: flex;
   gap: 2rem;
   list-style: none;
@@ -73,6 +79,8 @@ nav ul li {
 
 /* Popup */
 .popup {
+  width:947px;
+  height:834px ;
   position: fixed;
   top: 0;
   left: 0;

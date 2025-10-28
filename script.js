@@ -11,10 +11,6 @@ setTimeout(() => {
     document.getElementById("page3").classList.add("active");
   
     // Animate Page 3 text
-    setTimeout(() => {
-      document.getElementById("centerText").classList.add("active");
-    }, 300);
-  
     // Move automatically to Page 4 after animation
     setTimeout(() => {
       document.getElementById("page3").classList.remove("active");
