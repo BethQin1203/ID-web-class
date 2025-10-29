@@ -1,72 +1,94 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
 
+/* =============== BODY =============== */
 body {
-  margin: 0;
   font-family: "Poppins", sans-serif;
   background: url("images/background.png") no-repeat center center fixed;
-  background-size: cover;    
+  background-size: cover;
   overflow-x: hidden;
 }
 
-.page {
-  display: none;
-  text-align: center;
-  width: 100vw;        
-  height: 100vh;     
-  justify-content: center;
-  align-items: center;
-}
-.page.active {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Navbar */
+/* =============== NAVBAR =============== */
 nav {
-  width: 1512px;
-  height:139px ;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
+  width: 1366.53px;
+  height: 75px;
+  margin: 36px auto 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
 }
+
 nav ul {
-  padding-left: 0%;
+  margin-left: 195px;
+  margin-right: 120px;
   display: flex;
-  gap: 2rem;
+  gap: 9.3rem;
   list-style: none;
 }
+
 nav ul li {
   cursor: pointer;
   font-weight: 600;
+  transition: color 0.3s ease;
 }
 
-/* Page 1 Hero */
+nav ul li:hover {
+  color: #5a662b;
+}
+
+/* =============== HERO (Main Page) =============== */
 .hero {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3rem;
   text-align: center;
+  position: relative;
 }
-.big-text {
-  font-size: 6rem;
-  color: #f36b6b;
-  font-weight: 800;
+
+/* Big text image (slide animation) */
+.bigtext {
+  margin-top: 182px;
+  opacity: 0;
+  transform: translateX(-150%);
+  transition: transform 1.2s ease-out, opacity 0.8s ease-out;
+}
+
+.bigtext.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.drink-container {
+  width: 352.58px;
+  height: 684.68px;
   transition: all 0.8s ease;
+  margin-top: 125px;
 }
+
 .drink-container img {
   width: 250px;
   transition: all 0.8s ease;
-  filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 10px 8px rgba(0,0,0,0.2));
 }
+
+.drink-container:hover img {
+  transform: translateY(-25px);
+  filter: drop-shadow(0 25px 15px rgba(0,0,0,0.25));
+}
+
+.text {
+  max-width: 300px;
+  text-align: left;
+}
+
 .text p {
-  width: 300px;
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
+
 .text button {
   margin-top: 1rem;
   padding: 0.7rem 1.5rem;
@@ -75,12 +97,15 @@ nav ul li {
   border: none;
   border-radius: 25px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Popup */
+.text button:hover {
+  background-color: #7d8f4f;
+}
+
+/* =============== POPUP =============== */
 .popup {
-  width:947px;
-  height:834px ;
   position: fixed;
   top: 0;
   left: 0;
@@ -90,143 +115,112 @@ nav ul li {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 }
-.hidden { display: none; }
 
+.popup.hidden {
+  display: none;
+}
+
+/* POPUP BOX (smaller) */
 .popup-content {
-  background: white;
-  padding: 2rem;
+  background-color: white;
+  width: 700px;
+  height: 600px;
   border-radius: 20px;
-  text-align: center;
+  overflow: hidden;
   position: relative;
-  width: 80vw;
-  max-width: 947px;   /* matches your Figma width but scales */
-  max-height: 90vh;
-  overflow: auto;
-  animation: fadeIn 0.5s ease;
-}
-
-.close {
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0; transform: scale(0.8);}
-  to {opacity: 1; transform: scale(1);}
-}
-
-/* Page 3 */
-#centerText {
-  font-size: 4rem;
-  font-weight: 800;
-  color: #f36b6b;
-  opacity: 0;
-  transform: scale(0.5);
-  transition: all 2s ease;
-}
-#centerText.active {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Page 4 Letter Movement */
-#moveLetters {
-  font-size: 4rem;
-  font-weight: 800;
-  color: #f36b6b;
-  letter-spacing: 0.8rem;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 1.5s ease;
-}
-#moveLetters1 {
-  font-size: 4rem;
-  font-weight: 800;
-  color: #f36b6b;
-  letter-spacing: 0.8rem;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 1.5s ease;
-}
-#moveLetters.active {
-  opacity: 1;
-  transform: translateY(0);
-  letter-spacing: 0.2rem;
-}
-
-/* Page 5 Hover Animation */
-.final-hero {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  animation: fadeIn 1.5s ease forwards;
 }
-.hover-text {
-  font-size: 3.5rem;
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 28px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* TOP IMAGE SECTION */
+.popup-image {
+  width: 100%;
+  height: 45%;
+  overflow: hidden;
+}
+
+.popup-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TEXT SECTION */
+.popup-body {
+  background-color: white;
+  padding: 2rem;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.popup-body h2 {
+  font-size: 2rem;
   font-weight: 800;
-  color: #f36b6b;
-  transition: transform 0.5s ease;
-}
-.hover-can img {
-  width: 250px;
-  transition: all 0.5s ease;
-  filter: drop-shadow(0 10px 10px rgba(0,0,0,0.3));
-}
-.hover-text:hover, .hover-can:hover img {
-  transform: translateY(-20px);
-}
-.hover-can:hover img {
-  filter: drop-shadow(0 25px 15px rgba(0,0,0,0.2));
+  margin-bottom: 0.8rem;
 }
 
-/* BERRY appears from right */
-.berry {
-  display: inline-block;
-  opacity: 0;
-  transform: translateX(200px);
-  animation: slideInRight 1.5s ease forwards;
-  animation-delay: 0.3s; /* appears slightly later */
+.popup-body p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
-@keyframes slideInLeft {
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+.popup-body input {
+  width: 70%;
+  padding: 0.8rem;
+  border: 2px solid #5a662b;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 1rem;
+  outline: none;
+  margin-bottom: 1rem;
+  align-self: center;
 }
 
-@keyframes slideInRight {
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* Drink image */
-.drink-container img {
-  width: 250px;
-  transition: all 0.8s ease;
-  filter: drop-shadow(0 10px 8px rgba(0,0,0,0.2));
-}
-
-.text {
-  max-width: 300px;
-}
-.text p {
-  font-size: 1.1rem;
-}
-.text button {
-  margin-top: 1rem;
-  padding: 0.7rem 1.5rem;
+.popup-body button {
   background-color: #5a662b;
   color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem 2.5rem;
   border: none;
-  border-radius: 25px;
+  border-radius: 50px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
 }
-.text button:hover {
+
+.popup-body button:hover {
   background-color: #7d8f4f;
+}
+
+/* Animation for fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

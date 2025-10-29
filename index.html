@@ -1,75 +1,68 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Strawberry-drink Animation</title>
+  <title>Strawberry Drink Animation</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- PAGE 1 -->
-  <section id="page1" class="page active">
-    <nav>
-      <div class="logo">
-        <img src="images/logo.png" alt="Logo" />
-      </div>
-      <ul>
-        <li>Products</li>
-        <li>About</li>
-        <li>Insights</li>
-      </ul>
-      <div class="logo">
-        <img src="images/search.png" alt="search" />
-      </div>
-    </nav>
-    <div class="hero">
-      <h1 class="big-text">STRAW<br> BERRY</h1>
-      <div class="drink-container">
-        <img id="drink" src="images/Drink.png" alt="drink" />
-      </div>
-      <div class="text">
-        <p>Sip into sweetness with our refreshing strawberry drink bursting with juicy flavor for a taste of pure delight.</p>
-        <button id="orderBtn">ORDER NOW</button>
-      </div>
+  <!-- ---------- NAVIGATION ---------- -->
+  <nav>
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo" />
     </div>
-  </section>
+    <ul>
+      <li>Products</li>
+      <li>About</li>
+      <li>Insights</li>
+    </ul>
+    <div class="search">
+      <img src="images/search.png" alt="search" />
+    </div>
+  </nav>
 
-  <!-- PAGE 2: POPUP -->
-  <div id="popup" class="popup hidden">
-    <div class="popup-content">
-      <span id="closePopup" class="close">&times;</span>
-      <img src="images/pop out box.png" alt="pop ad" />
-      <h2>Get 15% Off</h2>
-      <p>Enjoy 15% off your first order when you sign up, plus special offers and updates on new flavors.</p>
-      <input type="email" placeholder="Email" />
-      <button>Sign Up</button>
+  <!-- ---------- HERO SECTION ---------- -->
+  <div class="hero">
+    <img class="bigtext" id="bigText" src="images/Big text.png" alt="bigtext" />
+
+    <div class="drink-container">
+      <img id="drink" src="images/strawberry drink.png" alt="drink" />
+    </div>
+
+    <div class="text">
+      <p>
+        Sip into sweetness with our refreshing strawberry drink bursting
+        with juicy flavor for a taste of pure delight.
+      </p>
+      <button id="orderBtn">ORDER NOW</button>
     </div>
   </div>
 
-  <!-- PAGE 3 -->
-  <section id="page3" class="text-move">
-    <h1 id="centerText-left">STRAW</h1>
-    <h1 id="centerText-right">BERRY</h1>
-  </section>
+  <!-- ============ POPUP AD ============ -->
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <!-- Close Button -->
+      <span id="closePopup" class="close">&times;</span>
 
-  <!-- PAGE 4: SMOOTH LETTER MOVE -->
-  <section id="page4" class="page hidden">
-    <h1 id="moveLetters">STRAW</h1>
-    <h1 id="moveLetter1">BERRY</h1>
-  </section>
+      <!-- TOP IMAGE -->
+      <div class="popup-image">
+        <img src="images/popoutimge.png" alt="Ad Banner" />
+      </div>
 
-  <!-- PAGE 5: HOVER ANIMATION -->
-  <section id="page5" class="page hidden">
-    <div class="final-hero">
-      <h1 class="hover-textleft">STRAW</h1>
-      <h1 class="hover-textright">BERRY</h1>
-      <div class="hover-can">
-        <img src="images/Drink.png" alt="drink" />
+      <!-- TEXT SECTION -->
+      <div class="popup-body">
+        <h2>Get 15% Off</h2>
+        <p>
+          Enjoy 15% off your first order when you sign up,
+          plus special offers and updates on new flavors.
+        </p>
+        <input type="email" placeholder="Email" />
+        <button id="signupBtn">Sign Up</button>
       </div>
     </div>
-  </section>
+  </div>
 
   <script src="script.js"></script>
 </body>
