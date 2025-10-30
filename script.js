@@ -7,7 +7,7 @@ const bigText = document.getElementById("bigText");
 window.addEventListener("load", () => {
   setTimeout(() => {
     popup.classList.remove("hidden");
-  }, 1500); // popup appears after 3 seconds (adjust as needed)
+  }, 1500); 
 });
 
 // Close popup and trigger big text animation
